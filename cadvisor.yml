@@ -1,0 +1,20 @@
+services:
+  cadvisor:
+    image: gcr.io/cadvisor/cadvisor
+    volumes:
+      - /:/rootfs:ro
+      - /var/run:/var/run:rw
+      - /sys:/sys:ro
+      - /var/lib/docker/:/var/lib/docker:ro
+    ports:
+      - 8080
+    deploy:
+      mode: global
+      restart_policy:
+        condition: on-failure
+    networks:
+      - stack-network
+networks:
+  stack-network:
+    name: principal
+    external: true 
