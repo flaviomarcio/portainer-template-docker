@@ -13,8 +13,4 @@ services:
       restart_policy:
         condition: on-failure
     networks:
-      - stack-network
-networks:
-  stack-network:
-    name: principal
-    external: true 
+      - principal
