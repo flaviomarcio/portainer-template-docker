@@ -1,3 +1,5 @@
+version: '3'
+
 services:
   cadvisor:
     image: gcr.io/cadvisor/cadvisor
@@ -6,8 +8,6 @@ services:
       - /var/run:/var/run:rw
       - /sys:/sys:ro
       - /var/lib/docker/:/var/lib/docker:ro
-    ports:
-      - 8080
     deploy:
       mode: global
       restart_policy:
