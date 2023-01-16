@@ -1,0 +1,13 @@
+version: '3.9'
+
+networks:
+  stack-inbound:
+    name: ${STACK_NETWORK_INBOUND}
+    external: true
+
+services:
+  wireguard:
+    image: linuxserver/bookstack
+    restart: unless-stopped
+    networks:
+      - stack-inbound
