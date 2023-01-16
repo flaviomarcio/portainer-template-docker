@@ -12,5 +12,4 @@ services:
       mode: global
       restart_policy:
         condition: on-failure
-    networks:
-      - principal
+
